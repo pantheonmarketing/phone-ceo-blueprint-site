@@ -3,460 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phone CEO Blueprint | Run Your Business From Your Phone</title>
-  <meta name="description" content="Build an AI business assistant you can talk to from your phone. Send short voice notes and your AI assistants start working." />
-  <meta property="og:title" content="Phone CEO Blueprint" />
-  <meta property="og:description" content="If you can send voice notes, you can run your business from your phone." />
+  <title>Phone CEO Blueprint | AI Operator From Your Phone</title>
+  <meta name="description" content="Set up an AI business assistant you can talk to with voice notes. Built for busy business owners who want to move work forward from their phone." />
+  <meta property="og:title" content="Phone CEO Blueprint | Run Your Business From Your Phone" />
+  <meta property="og:description" content="Set up a phone-first AI operator. Send voice notes and turn them into content, follow-ups, reminders, plans, and replies." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pantheonmarketing.github.io/phone-ceo-blueprint-site/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Phone CEO Blueprint" />
+  <meta name="twitter:description" content="Stop using AI like a chatbot. Run your business from your phone." />
+  <link rel="canonical" href="https://pantheonmarketing.github.io/phone-ceo-blueprint-site/" />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #ffffff;
-      --ink: #061b31;
-      --muted: #64748d;
-      --label: #273951;
-      --purple: #533afd;
-      --purple-hover: #4434d4;
-      --purple-soft: #eef0ff;
-      --border: #e5edf5;
-      --dark: #1c1e54;
-      --dark-2: #0d253d;
-      --ruby: #ea2261;
-      --magenta: #f96bee;
-      --green: #15be53;
-      --shadow: rgba(50,50,93,0.25) 0px 30px 45px -30px, rgba(0,0,0,0.1) 0px 18px 36px -18px;
-      --soft-shadow: rgba(23,23,23,0.08) 0px 15px 35px 0px;
-      --max: 1120px;
+    :root{
+      --ink:#061b31; --muted:#64748d; --label:#273951; --purple:#533afd; --purple2:#4434d4;
+      --soft:#f6f9fc; --line:#e5edf5; --dark:#151844; --dark2:#0d253d; --green:#15be53;
+      --pink:#ea2261; --magenta:#f96bee; --shadow:rgba(50,50,93,.25) 0 30px 45px -30px, rgba(0,0,0,.10) 0 18px 36px -18px;
+      --max:1140px;
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Source Sans 3', system-ui, -apple-system, Segoe UI, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      font-feature-settings: "ss01";
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    p { color: var(--muted); font-size: 18px; line-height: 1.5; margin: 0; }
-    h1, h2, h3 { margin: 0; color: var(--ink); font-weight: 300; letter-spacing: -0.04em; text-wrap: balance; }
-    h1 { font-size: clamp(44px, 7.4vw, 82px); line-height: .95; }
-    h2 { font-size: clamp(34px, 5vw, 56px); line-height: 1.02; }
-    h3 { font-size: 26px; line-height: 1.12; letter-spacing: -0.02em; }
-
-    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-    .nav {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(255,255,255,.84);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(229,237,245,.8);
-    }
-    .nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display:flex; align-items:center; gap:10px; font-weight:600; color:var(--ink); letter-spacing:-.01em; }
-    .brand-mark { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--purple), var(--ruby) 55%, var(--magenta)); box-shadow: var(--soft-shadow); }
-    .nav-links { display:flex; align-items:center; gap:24px; font-size:15px; color:var(--label); }
-    .nav-cta, .btn {
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      min-height: 44px; padding: 12px 18px; border-radius: 6px;
-      background: var(--purple); color:white; font-size:16px; font-weight:500;
-      box-shadow: rgba(83,58,253,.28) 0 12px 24px -12px;
-      transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
-    }
-    .nav-cta:hover, .btn:hover { background: var(--purple-hover); transform: translateY(-1px); box-shadow: rgba(83,58,253,.35) 0 18px 28px -14px; }
-    .btn.secondary { background:white; color:var(--purple); border:1px solid #b9b9f9; box-shadow:none; }
-    .btn.secondary:hover { background: rgba(83,58,253,.05); }
-
-    .hero { position:relative; overflow:hidden; padding: 70px 0 76px; }
-    .hero::before {
-      content:""; position:absolute; inset:-180px -120px auto auto; width: 560px; height: 560px;
-      background: radial-gradient(circle at 30% 30%, rgba(249,107,238,.32), transparent 36%), radial-gradient(circle at 70% 50%, rgba(83,58,253,.22), transparent 42%);
-      filter: blur(8px); z-index:-1;
-    }
-    .eyebrow { display:inline-flex; align-items:center; gap:8px; color:var(--purple); background:var(--purple-soft); border:1px solid #d6d9fc; border-radius:6px; padding:6px 10px; font-size:14px; font-weight:600; margin-bottom:22px; }
-    .hero-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items:center; }
-    .hero-copy { position:relative; z-index:2; }
-    .hero-copy p { max-width: 650px; margin-top: 22px; font-size: 22px; line-height: 1.38; color: #4f6079; }
-    .hero-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top: 30px; align-items:center; }
-    .price-note { color:var(--label); font-size:15px; margin-top:16px; }
-    .micro-proof { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
-    .pill { border:1px solid var(--border); border-radius:6px; padding:7px 10px; background:#fff; color:var(--label); font-size:14px; box-shadow: rgba(23,23,23,.05) 0 6px 18px; }
-
-    .phone-stage { position:relative; min-height: 610px; }
-    .phone {
-      width: min(360px, 86vw); margin:0 auto; border: 10px solid #061b31; border-radius: 42px;
-      background: #f8fbff; box-shadow: var(--shadow); overflow:hidden; position:relative;
-    }
-    .phone-top { height: 34px; background:#061b31; position:relative; }
-    .phone-top::after { content:""; position:absolute; left:50%; top:8px; transform:translateX(-50%); width:86px; height:16px; border-radius:99px; background:#0d253d; }
-    .chat { padding: 18px; display:flex; flex-direction:column; gap:12px; min-height: 520px; }
-    .msg { max-width: 86%; padding: 12px 13px; border-radius: 14px; font-size:15px; line-height:1.25; box-shadow: rgba(23,23,23,.05) 0 6px 16px; }
-    .msg.user { margin-left:auto; background:var(--purple); color:white; border-bottom-right-radius:4px; }
-    .msg.ai { background:white; border:1px solid var(--border); color:var(--ink); border-bottom-left-radius:4px; }
-    .voice-bar { display:flex; align-items:center; gap:9px; color:white; }
-    .wave { display:flex; gap:3px; align-items:center; }
-    .wave span { display:block; width:3px; border-radius:4px; background:white; opacity:.86; }
-    .wave span:nth-child(1){height:10px}.wave span:nth-child(2){height:18px}.wave span:nth-child(3){height:13px}.wave span:nth-child(4){height:22px}.wave span:nth-child(5){height:12px}.wave span:nth-child(6){height:17px}
-    .task-card { background:#fff; border:1px solid var(--border); border-radius:10px; padding:12px; margin-top:2px; }
-    .task { display:flex; gap:8px; align-items:flex-start; padding:7px 0; font-size:14px; color:var(--label); border-bottom:1px solid #edf3f8; }
-    .task:last-child{border-bottom:0}.check{color:var(--green);font-weight:700}.typing { color:#7b8ba4; font-family:'Source Code Pro', monospace; font-size:12px; margin-top:auto; }
-    .float-card { position:absolute; background:white; border:1px solid var(--border); border-radius:8px; padding:14px; box-shadow:var(--shadow); max-width:220px; }
-    .float-card strong { display:block; font-size:14px; color:var(--ink); margin-bottom:4px; }
-    .float-card span { color:var(--muted); font-size:13px; line-height:1.25; display:block; }
-    .float-card.one { top: 70px; left: 0; }
-    .float-card.two { right:0; bottom: 96px; }
-
-    section { padding: 84px 0; }
-    .section-head { max-width: 760px; margin-bottom: 38px; }
-    .section-head p { margin-top:16px; }
-    .problem { background: linear-gradient(180deg, #fff, #f7f9fd); }
-    .pain-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
-    .pain-card, .feature-card, .price-card, .step-card { background:#fff; border:1px solid var(--border); border-radius:8px; padding:24px; box-shadow: rgba(23,23,23,.06) 0 12px 30px; }
-    .pain-card b { display:block; font-size:18px; color:var(--ink); margin-bottom:8px; }
-    .pain-card p, .feature-card p, .step-card p { font-size:16px; }
-
-    .dark { background: var(--dark); color:white; position:relative; overflow:hidden; }
-    .dark::before { content:""; position:absolute; inset:auto -140px -200px auto; width:500px; height:500px; background:radial-gradient(circle, rgba(249,107,238,.26), transparent 58%); }
-    .dark h2, .dark h3 { color:white; }
-    .dark p { color:rgba(255,255,255,.72); }
-    .mechanism-grid { display:grid; grid-template-columns: .85fr 1.15fr; gap:40px; align-items:center; position:relative; }
-    .office {
-      background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:12px; padding:16px;
-      box-shadow: rgba(3,3,39,.25) 0px 24px 38px -16px;
-    }
-    .office-top { display:flex; justify-content:space-between; align-items:center; color:white; padding:4px 4px 14px; font-family:'Source Code Pro', monospace; font-size:12px; }
-    .office-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
-    .agent { background:#fff; color:var(--ink); border-radius:8px; padding:14px; min-height:142px; display:flex; flex-direction:column; justify-content:space-between; }
-    .agent small { font-family:'Source Code Pro', monospace; color:var(--purple); font-size:11px; }
-    .agent b { font-size:18px; font-weight:600; }
-    .agent span { font-size:13px; color:var(--muted); line-height:1.25; }
-    .status { display:inline-flex; align-items:center; gap:6px; font-size:12px; color:#108c3d; background:rgba(21,190,83,.16); border:1px solid rgba(21,190,83,.35); border-radius:5px; padding:3px 6px; width:max-content; }
-    .dot { width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 0 5px rgba(21,190,83,.12); }
-
-    .features { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
-    .feature-card { min-height: 220px; }
-    .num { font-family:'Source Code Pro', monospace; font-size:13px; color:var(--purple); margin-bottom:16px; display:block; }
-
-    .proof-strip { background:#f7f9fd; padding: 34px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-    .proof-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .proof-item strong { display:block; font-size:30px; font-weight:300; letter-spacing:-.03em; color:var(--ink); }
-    .proof-item span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
-
-    .steps { display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; }
-    .step-card { position:relative; overflow:hidden; }
-    .step-card::after { content:""; position:absolute; width:80px; height:80px; border-radius:50%; background:rgba(83,58,253,.08); right:-28px; top:-28px; }
-
-    .model-grid { display:grid; grid-template-columns: .9fr 1.1fr; gap:28px; align-items:start; }
-    .model-panel { background:#fff; border:1px solid var(--border); border-radius:12px; padding:28px; box-shadow:var(--shadow); }
-    .model-panel h3 { font-weight:400; margin-bottom:14px; }
-    .model-list { list-style:none; padding:0; margin:20px 0 0; display:grid; gap:12px; }
-    .model-list li { display:grid; grid-template-columns:92px 1fr; gap:14px; align-items:start; padding:13px 0; border-bottom:1px solid #edf3f8; color:var(--label); font-size:16px; line-height:1.3; }
-    .model-list li:last-child { border-bottom:0; }
-    .model-list b { color:var(--purple); font-family:'Source Code Pro', monospace; font-size:13px; letter-spacing:-.02em; }
-    .quick-win { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px; }
-    .quick-win div { background:#f8fbff; border:1px solid var(--border); border-radius:8px; padding:16px; color:var(--label); font-size:16px; line-height:1.35; }
-
-    .offer-wrap { display:grid; grid-template-columns: .85fr 1.15fr; gap:28px; align-items:start; }
-    .price-card.featured { border:1px solid #b9b9f9; box-shadow:var(--shadow); position:relative; }
-    .price { font-size:64px; font-weight:300; letter-spacing:-.05em; color:var(--ink); line-height:1; margin:18px 0 4px; }
-    .price small { font-size:20px; color:var(--muted); letter-spacing:0; }
-    .check-list { list-style:none; padding:0; margin:22px 0; display:grid; gap:12px; }
-    .check-list li { color:var(--label); font-size:17px; display:flex; gap:10px; line-height:1.25; }
-    .check-list li::before { content:"✓"; color:var(--green); font-weight:700; }
-    .club { background:var(--dark); color:white; border-radius:12px; padding:28px; box-shadow:var(--shadow); }
-    .club h3 { color:white; }
-    .club .price { color:white; font-size:52px; }
-    .club p, .club li { color:rgba(255,255,255,.74); }
-    .club .check-list li::before { color:#4ade80; }
-
-    .faq { max-width: 860px; }
-    details { border-bottom:1px solid var(--border); padding:20px 0; }
-    summary { cursor:pointer; font-size:20px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; gap:18px; }
-    summary::-webkit-details-marker { display:none; }
-    summary::after { content:"+"; color:var(--purple); font-weight:600; }
-    details[open] summary::after { content:"–"; }
-    details p { padding-top:12px; font-size:17px; }
-
-    .final { text-align:center; background: linear-gradient(180deg, #fff, #f7f9fd); }
-    .final h2 { max-width: 850px; margin:0 auto; }
-    .final p { max-width:680px; margin:18px auto 0; }
-
-    .sticky-mobile { display:none; }
-
-    @media (max-width: 940px) {
-      .nav-links { display:none; }
-      .hero-grid, .mechanism-grid, .offer-wrap { grid-template-columns: 1fr; }
-      .hero { padding-top: 48px; }
-      .phone-stage { min-height:auto; margin-top: 16px; }
-      .float-card { display:none; }
-      .pain-grid, .features, .proof-grid, .steps, .quick-win { grid-template-columns: repeat(2, 1fr); }
-      .model-grid { grid-template-columns:1fr; }
-      .office-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 620px) {
-      .container { padding:0 18px; }
-      section { padding: 58px 0; }
-      h1 { font-size: clamp(40px, 11.5vw, 48px); line-height: .98; letter-spacing:-.045em; }
-      h2 { font-size: clamp(32px, 9vw, 42px); }
-      .hero { padding-top: 36px; }
-      .eyebrow { font-size:13px; margin-bottom:16px; }
-      .hero-copy p { font-size:18px; line-height:1.42; margin-top:18px; }
-      .micro-proof { display:none; }
-      .price-note { font-size:14px; line-height:1.25; }
-      .hero-actions .btn { width:100%; }
-      .pain-grid, .features, .proof-grid, .steps, .quick-win { grid-template-columns: 1fr; }
-      .model-list li { grid-template-columns:1fr; gap:4px; }
-      .proof-strip { padding:26px 0; }
-      .phone { width:100%; border-width:8px; border-radius:34px; }
-      .chat { min-height:500px; }
-      .price { font-size:56px; }
-      .sticky-mobile {
-        display:flex; position:fixed; bottom:0; left:0; right:0; z-index:60; padding:10px 14px calc(10px + env(safe-area-inset-bottom));
-        background:rgba(255,255,255,.92); backdrop-filter: blur(14px); border-top:1px solid var(--border); gap:10px; align-items:center;
-      }
-      .sticky-mobile span { font-size:13px; color:var(--label); line-height:1.1; flex:1; }
-      .sticky-mobile .btn { min-height:42px; padding:10px 14px; font-size:15px; }
-      body { padding-bottom:74px; }
-    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:'Source Sans 3',system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:white;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01"}
+    a{text-decoration:none;color:inherit} img{max-width:100%;display:block} p{margin:0;color:var(--muted);font-size:18px;line-height:1.48} h1,h2,h3{margin:0;color:var(--ink);font-weight:300;letter-spacing:-.045em;text-wrap:balance} h1{font-size:clamp(46px,7.4vw,84px);line-height:.94} h2{font-size:clamp(34px,5vw,58px);line-height:1.02} h3{font-size:27px;line-height:1.1;letter-spacing:-.03em}.container{max-width:var(--max);margin:auto;padding:0 24px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 20px;border-radius:6px;background:var(--purple);color:#fff;font-size:17px;font-weight:600;box-shadow:rgba(83,58,253,.30) 0 18px 30px -16px;transition:.18s}.btn:hover{background:var(--purple2);transform:translateY(-1px)}.btn.alt{background:#fff;color:var(--purple);border:1px solid #b9b9f9;box-shadow:none}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:6px;background:#eef0ff;border:1px solid #d6d9fc;color:var(--purple);font-size:14px;font-weight:700;margin-bottom:18px}.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(229,237,245,.86)}.nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}.mark{width:31px;height:31px;border-radius:8px;background:linear-gradient(135deg,var(--purple),var(--pink) 55%,var(--magenta));box-shadow:var(--shadow)}.nav-links{display:flex;gap:22px;color:var(--label);font-size:15px}.hero{position:relative;overflow:hidden;padding:62px 0 76px}.hero:before{content:"";position:absolute;right:-170px;top:-190px;width:680px;height:680px;background:radial-gradient(circle at 35% 32%,rgba(249,107,238,.34),transparent 36%),radial-gradient(circle at 70% 55%,rgba(83,58,253,.28),transparent 43%);filter:blur(8px);z-index:-1}.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:54px;align-items:center}.hero p.lead{font-size:22px;line-height:1.36;max-width:670px;margin-top:22px;color:#4f6079}.actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:30px}.price-line{font-size:15px;color:var(--label);margin-top:16px}.trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.pill{border:1px solid var(--line);background:#fff;color:var(--label);font-size:14px;border-radius:6px;padding:7px 10px;box-shadow:rgba(23,23,23,.05) 0 8px 18px}.phone-wrap{position:relative;min-height:610px}.phone{width:min(360px,88vw);margin:auto;border:10px solid var(--ink);border-radius:42px;background:#f8fbff;overflow:hidden;box-shadow:var(--shadow)}.phone-top{height:34px;background:var(--ink);position:relative}.phone-top:after{content:"";position:absolute;left:50%;top:8px;transform:translateX(-50%);width:86px;height:16px;border-radius:99px;background:var(--dark2)}.chat{padding:18px;display:flex;flex-direction:column;gap:12px;min-height:520px}.msg{max-width:87%;padding:12px 13px;border-radius:14px;font-size:15px;line-height:1.25;box-shadow:rgba(23,23,23,.05) 0 6px 16px}.user{margin-left:auto;background:var(--purple);color:white;border-bottom-right-radius:4px}.ai{background:white;border:1px solid var(--line);border-bottom-left-radius:4px}.wave{display:flex;gap:3px;align-items:center}.wave span{width:3px;border-radius:4px;background:white;display:block}.wave span:nth-child(1){height:10px}.wave span:nth-child(2){height:19px}.wave span:nth-child(3){height:13px}.wave span:nth-child(4){height:23px}.wave span:nth-child(5){height:12px}.voice{display:flex;align-items:center;gap:9px}.output{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}.task{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #edf3f8;font-size:14px;color:var(--label)}.task:last-child{border-bottom:0}.check{color:var(--green);font-weight:700}.typing{font-family:'Source Code Pro',monospace;font-size:12px;color:#7b8ba4;margin-top:auto}.float{position:absolute;background:white;border:1px solid var(--line);border-radius:8px;padding:14px;box-shadow:var(--shadow);max-width:224px}.float b{display:block;font-size:14px}.float span{display:block;font-size:13px;color:var(--muted);line-height:1.25;margin-top:4px}.f1{left:0;top:76px}.f2{right:0;bottom:98px}section{padding:82px 0}.section-head{max-width:790px;margin-bottom:36px}.section-head p{margin-top:16px}.soft{background:linear-gradient(180deg,#fff,#f7f9fd)}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.card{background:white;border:1px solid var(--line);border-radius:10px;padding:24px;box-shadow:rgba(23,23,23,.06) 0 12px 30px}.card p{font-size:16px}.num{font-family:'Source Code Pro',monospace;color:var(--purple);font-size:13px;margin-bottom:14px;display:block}.dark{background:var(--dark);color:white;position:relative;overflow:hidden}.dark:before{content:"";position:absolute;right:-150px;bottom:-220px;width:560px;height:560px;background:radial-gradient(circle,rgba(249,107,238,.23),transparent 58%)}.dark h2,.dark h3{color:white}.dark p{color:rgba(255,255,255,.74)}.demo-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:38px;align-items:center;position:relative}.office{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:16px;box-shadow:rgba(3,3,39,.28) 0 24px 38px -16px}.office-top{display:flex;justify-content:space-between;color:white;font-family:'Source Code Pro',monospace;font-size:12px;padding:4px 4px 14px}.agents{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.agent{background:white;color:var(--ink);border-radius:9px;padding:14px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between}.agent small{font-family:'Source Code Pro',monospace;color:var(--purple);font-size:11px}.agent b{font-size:18px}.agent span{font-size:13px;color:var(--muted);line-height:1.25}.status{display:inline-flex;gap:6px;align-items:center;width:max-content;border-radius:5px;background:rgba(21,190,83,.16);border:1px solid rgba(21,190,83,.35);color:#108c3d;font-size:12px;padding:3px 6px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(21,190,83,.12)}.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.photo-grid img{height:178px;width:100%;object-fit:cover;border-radius:10px;border:1px solid var(--line);box-shadow:rgba(23,23,23,.07) 0 14px 30px}.quote{background:white;border:1px solid var(--line);border-radius:12px;padding:28px;box-shadow:var(--shadow)}.quote strong{display:block;font-size:27px;font-weight:300;letter-spacing:-.03em;line-height:1.12;margin-bottom:16px}.offer{display:grid;grid-template-columns:.88fr 1.12fr;gap:28px;align-items:start}.price-card{background:white;border:1px solid #b9b9f9;border-radius:14px;padding:30px;box-shadow:var(--shadow)}.price{font-size:66px;line-height:1;font-weight:300;letter-spacing:-.055em;margin:16px 0 4px}.checks{list-style:none;margin:22px 0;padding:0;display:grid;gap:12px}.checks li{display:flex;gap:10px;color:var(--label);font-size:17px;line-height:1.25}.checks li:before{content:"✓";color:var(--green);font-weight:700}.guarantee{background:var(--dark);color:white;border-radius:14px;padding:28px;box-shadow:var(--shadow)}.guarantee h3{color:white}.guarantee p,.guarantee li{color:rgba(255,255,255,.74)}.faq{max-width:860px}details{border-bottom:1px solid var(--line);padding:20px 0}summary{cursor:pointer;list-style:none;font-size:20px;color:var(--ink);display:flex;justify-content:space-between;gap:16px}summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--purple);font-weight:700}details[open] summary:after{content:"–"}details p{padding-top:12px;font-size:17px}.final{text-align:center;background:linear-gradient(180deg,#fff,#f7f9fd)}.final h2{max-width:850px;margin:auto}.final p{max-width:690px;margin:18px auto 0}.sticky{display:none}
+    @media(max-width:960px){.nav-links{display:none}.hero-grid,.demo-grid,.proof-grid,.offer{grid-template-columns:1fr}.phone-wrap{min-height:auto;margin-top:18px}.float{display:none}.grid3,.grid2{grid-template-columns:1fr 1fr}.agents{grid-template-columns:1fr}.photo-grid img{height:210px}}
+    @media(max-width:640px){.container{padding:0 18px}section{padding:58px 0}h1{font-size:clamp(40px,11.5vw,50px);line-height:.98}.hero{padding-top:36px}.hero p.lead{font-size:18px;line-height:1.42}.grid3,.grid2,.photo-grid{grid-template-columns:1fr}.trust{display:none}.actions .btn{width:100%}.phone{width:100%;border-width:8px;border-radius:34px}.chat{min-height:500px}.price{font-size:58px}.sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:10px;align-items:center;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line)}.sticky span{flex:1;font-size:13px;line-height:1.12;color:var(--label)}.sticky .btn{min-height:42px;padding:10px 14px;font-size:15px}body{padding-bottom:74px}}
   </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="#top" class="brand"><span class="brand-mark"></span><span>Phone CEO Blueprint</span></a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#how">How it works</a>
-        <a href="#office">Virtual office</a>
-        <a href="#inside">What's inside</a>
-        <a href="#model">Offer model</a>
-        <a href="#pricing">Pricing</a>
-      </nav>
-      <a class="nav-cta" href="#pricing">Get the Blueprint</a>
-    </div>
-  </header>
-
+  <!-- cold-ad-version: phone-ceo-blueprint-v2 -->
+  <header class="nav"><div class="container nav-inner"><a class="brand" href="#top"><span class="mark"></span><span>Phone CEO Blueprint</span></a><nav class="nav-links"><a href="#demo">Demo</a><a href="#proof">Proof</a><a href="#inside">Inside</a><a href="#checkout">Price</a></nav><a class="btn" href="#checkout">Get the Blueprint</a></div></header>
   <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">For busy business owners who live from their phone</div>
-          <h1>If you can send voice notes, you can run your business from your phone.</h1>
-          <p>Build an AI business assistant that takes your short voice notes and starts working. Plan your day, create content, draft replies, follow up with leads, remember tasks, and move the business forward without sitting at your computer.</p>
-          <div class="hero-actions">
-            <a class="btn" href="#pricing">Get Phone CEO Blueprint</a>
-            <a class="btn secondary" href="#how">See how it works</a>
-          </div>
-          <div class="price-note">Founding price: $27. Built for people who want results from AI without becoming technical.</div>
-          <div class="micro-proof">
-            <span class="pill">Voice notes in</span>
-            <span class="pill">AI assistants working</span>
-            <span class="pill">No coding</span>
-            <span class="pill">No laptop prison</span>
-          </div>
-        </div>
+    <section class="hero"><div class="container hero-grid"><div><div class="eyebrow">For busy business owners who hate laptop prison</div><h1>Stop using AI like a chatbot. Run your business from your phone.</h1><p class="lead">Phone CEO Blueprint shows you how to set up an AI business assistant you can talk to with voice notes, so content, follow-ups, reminders, plans, and replies do not have to wait until you sit at a computer.</p><div class="actions"><a class="btn" href="#checkout">Join Today For $27</a><a class="btn alt" href="#demo">Watch the idea</a></div><div class="price-line">First AI Operator Task in 60 Minutes Guarantee. No coding. No complicated tech setup.</div><div class="trust"><span class="pill">Voice notes in</span><span class="pill">AI assistants working</span><span class="pill">Business tasks out</span><span class="pill">Built for normal owners</span></div></div><div class="phone-wrap" aria-label="Phone CEO voice note mockup"><div class="float f1"><b>Content assistant</b><span>Turns your rough voice note into a post, email, or script.</span></div><div class="phone"><div class="phone-top"></div><div class="chat"><div class="msg user"><div class="voice"><div class="wave"><span></span><span></span><span></span><span></span><span></span></div><span>0:42 voice note</span></div></div><div class="msg ai">Got it. I’ll turn this into today’s business actions.</div><div class="output"><div class="task"><span class="check">✓</span><span>Draft Facebook post from your idea</span></div><div class="task"><span class="check">✓</span><span>Create follow-up message for 3 warm leads</span></div><div class="task"><span class="check">✓</span><span>Schedule reminder for tomorrow morning</span></div><div class="task"><span class="check">✓</span><span>Summarize priorities into a 5-minute plan</span></div></div><div class="msg ai">Your AI operators are working. I’ll report back with drafts and next actions.</div><div class="typing">AI office: 4 assistants active...</div></div></div><div class="float f2"><b>Follow-up assistant</b><span>Drafts replies and reminds you who needs attention.</span></div></div></div></section>
 
-        <div class="phone-stage" aria-label="Phone voice note demo mockup">
-          <div class="float-card one"><strong>Content assistant</strong><span>Turns your rough voice note into a post, email, or script.</span></div>
-          <div class="phone">
-            <div class="phone-top"></div>
-            <div class="chat">
-              <div class="msg user">
-                <div class="voice-bar"><div class="wave"><span></span><span></span><span></span><span></span><span></span><span></span></div><span>0:42 voice note</span></div>
-              </div>
-              <div class="msg ai">Got it. I’ll turn this into today’s business actions.</div>
-              <div class="task-card">
-                <div class="task"><span class="check">✓</span><span>Draft Facebook post from your idea</span></div>
-                <div class="task"><span class="check">✓</span><span>Create follow-up message for 3 warm leads</span></div>
-                <div class="task"><span class="check">✓</span><span>Schedule reminder for tomorrow morning</span></div>
-                <div class="task"><span class="check">✓</span><span>Summarize priorities into a 5-minute plan</span></div>
-              </div>
-              <div class="msg ai">Your AI operators are working. I’ll report back with drafts and next actions.</div>
-              <div class="typing">AI office: 4 assistants active...</div>
-            </div>
-          </div>
-          <div class="float-card two"><strong>Follow-up assistant</strong><span>Drafts replies and reminds you who needs attention.</span></div>
-        </div>
-      </div>
-    </section>
+    <section class="soft"><div class="container"><div class="section-head"><h2>You do not hate running your business. You hate being chained to the computer.</h2><p>The tabs, logins, half-finished tasks, messages, content ideas, and follow-ups pile up. Then life happens: kids, clients, errands, travel, meetings. The work waits for laptop time.</p></div><div class="grid3"><div class="card"><h3>Ideas disappear</h3><p>You think of good content, offers, and follow-ups while walking or driving, then lose them before you sit down.</p></div><div class="card"><h3>Small tasks drain you</h3><p>Replies, reminders, planning, notes, posts, summaries, and follow-ups are simple but constant.</p></div><div class="card"><h3>AI feels like another app</h3><p>Most people type random prompts, get one answer, then go back to doing the work themselves.</p></div></div></div></section>
 
-    <section class="problem">
-      <div class="container">
-        <div class="section-head">
-          <h2>You do not hate running your business. You hate being chained to the computer.</h2>
-          <p>The tabs, logins, dashboards, half-finished tasks, messages, content ideas, and follow-ups pile up. Then life happens. Kids, clients, errands, travel, meetings. The work waits for the laptop.</p>
-        </div>
-        <div class="pain-grid">
-          <div class="pain-card"><b>Ideas disappear</b><p>You think of great content, offers, and follow-ups while walking or driving, then lose them before you sit down.</p></div>
-          <div class="pain-card"><b>Small tasks drain you</b><p>Replies, reminders, planning, notes, posts, summaries, and follow-ups are simple but constant.</p></div>
-          <div class="pain-card"><b>AI feels like another tool</b><p>Most people open AI, type a random question, get one answer, then go back to doing the work themselves.</p></div>
-        </div>
-      </div>
-    </section>
+    <section class="dark" id="demo"><div class="container demo-grid"><div class="section-head"><div class="eyebrow" style="background:rgba(255,255,255,.12);color:white;border-color:rgba(255,255,255,.18)">The new mechanism</div><h2>Short voice notes become business execution.</h2><p>Your phone is the remote control. Your AI agent is the operator. You talk. Your assistants organize, draft, remind, plan, and execute.</p></div><div class="office"><div class="office-top"><span>Hermes virtual office preview</span><span>LIVE</span></div><div class="agents"><div class="agent"><small>ASSISTANT 01</small><b>Planner</b><span>Turns voice notes into priorities.</span><div class="status"><span class="dot"></span>working</div></div><div class="agent"><small>ASSISTANT 02</small><b>Content</b><span>Drafts posts, emails, scripts, and ideas.</span><div class="status"><span class="dot"></span>working</div></div><div class="agent"><small>ASSISTANT 03</small><b>Follow-up</b><span>Creates replies, reminders, and next actions.</span><div class="status"><span class="dot"></span>working</div></div></div></div></div></section>
 
-    <section class="dark" id="how">
-      <div class="container mechanism-grid">
-        <div class="section-head">
-          <div class="eyebrow" style="background:rgba(255,255,255,.12);color:white;border-color:rgba(255,255,255,.18)">The new mechanism</div>
-          <h2>Short voice notes become business execution.</h2>
-          <p>Phone CEO Blueprint shows you how to stop using AI like a chatbot and start using it like an operator in your pocket. You talk. Your AI assistants organize, draft, remind, plan, and execute.</p>
-        </div>
-        <div class="office" id="office">
-          <div class="office-top"><span>Hermes virtual office preview</span><span>LIVE</span></div>
-          <div class="office-grid">
-            <div class="agent"><small>ASSISTANT 01</small><b>Planner</b><span>Turns your voice note into today’s top priorities.</span><div class="status"><span class="dot"></span>working</div></div>
-            <div class="agent"><small>ASSISTANT 02</small><b>Content</b><span>Drafts posts, emails, scripts, and ideas from your notes.</span><div class="status"><span class="dot"></span>working</div></div>
-            <div class="agent"><small>ASSISTANT 03</small><b>Follow-up</b><span>Creates replies, reminders, and next actions for leads.</span><div class="status"><span class="dot"></span>working</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="proof"><div class="container proof-grid"><div class="photo-grid"><img src="assets/workshop-wide-shot.jpg" alt="Jonny teaching business owners in a live AI workshop"><img src="assets/ai-replace-slide.jpg" alt="Jonny presenting practical AI strategy"><img src="assets/workshop-live-room.jpg" alt="Live room with business owners building AI workflows"><img src="assets/founder-qa.jpg" alt="Jonny answering questions in a founder discussion"></div><div class="quote"><div class="eyebrow">Real operator proof</div><strong>“I do not just talk about AI. I teach business owners how to install it into real workflows.”</strong><p>Jonny has coached 10,000+ people online and helped 200+ Bangkok founders and CEOs in hands-on AI workshops. This Blueprint turns the same practical operator mindset into a simple first setup you can start from your phone.</p></div></div></section>
 
-    <section id="inside">
-      <div class="container">
-        <div class="section-head">
-          <h2>What you build inside the Blueprint</h2>
-          <p>The first version is focused on fast setup and fast wins. A normal busy person should feel the shift quickly: “I can just talk to this and it starts helping.”</p>
-        </div>
-        <div class="features">
-          <div class="feature-card"><span class="num">01</span><h3>Your phone-based AI assistant</h3><p>Set up the basic assistant and learn how to send useful voice notes that become action.</p></div>
-          <div class="feature-card"><span class="num">02</span><h3>The 5-minute daily routine</h3><p>A simple daily voice-note habit for priorities, follow-ups, content, reminders, and decisions.</p></div>
-          <div class="feature-card"><span class="num">03</span><h3>Business memory setup</h3><p>Teach your AI what matters about your business so it stops giving generic answers.</p></div>
-          <div class="feature-card"><span class="num">04</span><h3>Voice-note prompts</h3><p>Ready-to-use prompts for content, sales, planning, client replies, and task cleanup.</p></div>
-          <div class="feature-card"><span class="num">05</span><h3>Tasks you hate workflow</h3><p>Use AI for the work you avoid: messages, summaries, planning, reminders, and drafts.</p></div>
-          <div class="feature-card"><span class="num">06</span><h3>Virtual office demo</h3><p>See the AI office concept so the invisible assistant becomes visual, real, and exciting.</p></div>
-        </div>
-      </div>
-    </section>
+    <section class="soft" id="inside"><div class="container"><div class="section-head"><h2>What you get inside Phone CEO Blueprint</h2><p>The first version is built for fast setup and a fast win: “I can just talk to this and it starts helping.”</p></div><div class="grid3"><div class="card"><span class="num">01</span><h3>Phone CEO Setup Guide</h3><p>Get your AI assistant working from your phone without becoming technical.</p></div><div class="card"><span class="num">02</span><h3>5-Minute Daily Routine</h3><p>Exactly what to say each morning for priorities, reminders, content, and follow-ups.</p></div><div class="card"><span class="num">03</span><h3>Daily Operator Voice Note</h3><p>Turn messy voice notes into tasks, plans, drafts, reminders, and next actions.</p></div><div class="card"><span class="num">04</span><h3>Business Memory Builder</h3><p>Teach your AI your offers, clients, tone, important facts, and recurring tasks.</p></div><div class="card"><span class="num">05</span><h3>Content From Voice Notes</h3><p>Turn walking or driving thoughts into posts, emails, scripts, and campaign ideas.</p></div><div class="card"><span class="num">06</span><h3>Lead Reply + Follow-Up</h3><p>Create cleaner replies, reminders, and follow-up actions from your phone.</p></div></div></div></section>
 
-    <div class="proof-strip">
-      <div class="container proof-grid">
-        <div class="proof-item"><strong>5 min</strong><span>Daily phone routine</span></div>
-        <div class="proof-item"><strong>$27</strong><span>First front-end test</span></div>
-        <div class="proof-item"><strong>$97/mo</strong><span>Phone CEO Club on Skool</span></div>
-        <div class="proof-item"><strong>0 code</strong><span>Built for normal business owners</span></div>
-      </div>
-    </div>
+    <section><div class="container grid2"><div class="card"><h3>Old way</h3><ul class="checks"><li>Sit at laptop</li><li>Open 17 tabs</li><li>Re-type your ideas</li><li>Forget follow-ups</li><li>Wait until you have “computer time”</li></ul></div><div class="card"><h3>Phone CEO way</h3><ul class="checks"><li>Open phone</li><li>Send voice note</li><li>AI turns it into a plan, message, task, post, reminder, or follow-up</li><li>You review and approve</li><li>Business keeps moving during real life</li></ul></div></div></section>
 
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <h2>How it works</h2>
-          <p>This needs to feel simple enough for someone over 30 who is busy with children, clients, and real life.</p>
-        </div>
-        <div class="steps">
-          <div class="step-card"><span class="num">Step 1</span><h3>Send a voice note</h3><p>Tell your AI what is on your mind, what you need done, or what task you are avoiding.</p></div>
-          <div class="step-card"><span class="num">Step 2</span><h3>AI organizes it</h3><p>Your assistant turns the messy note into drafts, reminders, checklists, and next actions.</p></div>
-          <div class="step-card"><span class="num">Step 3</span><h3>Assistants execute</h3><p>Your content, planning, and follow-up assistants start working from your phone instructions.</p></div>
-          <div class="step-card"><span class="num">Step 4</span><h3>You approve</h3><p>You review the result, make quick changes, and keep moving without getting trapped at the desk.</p></div>
-        </div>
-      </div>
-    </section>
+    <section class="soft" id="checkout"><div class="container offer"><div><div class="section-head"><div class="eyebrow">Start here</div><h2>Set up your first AI operator task in 60 minutes.</h2><p>Start with the simple Blueprint. If you want help building the full version for your business later, the next step is Phone CEO Club or a live build session.</p></div><div class="guarantee"><h3>First AI Operator Task in 60 Minutes Guarantee</h3><p>Follow the setup, send your first voice note command, and get at least one useful business output. If you cannot get one practical result within 60 minutes, email us and we’ll refund you.</p></div></div><div class="price-card"><div class="eyebrow">Founding price</div><h3>Phone CEO Blueprint</h3><div class="price">$27</div><p>Instant access to the core setup, daily voice-note routine, and first workflows.</p><ul class="checks"><li>Phone-based AI assistant setup</li><li>5-minute daily operator routine</li><li>Voice-note workflow templates</li><li>Business memory setup</li><li>Content, reply, reminder, and planning workflows</li><li>Virtual office / AI operator demo</li></ul><a class="btn" href="#checkout">Get instant access</a><div class="price-line">Checkout link needs to be connected before paid traffic goes live.</div></div></div></section>
 
-    <section class="problem" id="model">
-      <div class="container model-grid">
-        <div class="section-head">
-          <div class="eyebrow">The offer model</div>
-          <h2>A simple first win, then deeper help when they want it.</h2>
-          <p>The front-end product is intentionally low ticket because the first job is to create buyers, prove the phone-based workflow, and give people a quick result. The deeper business is the live setup, the monthly club, and done-with-you implementation.</p>
-          <div class="quick-win">
-            <div><strong>Fast problem:</strong><br>Stop waiting until you sit at the computer.</div>
-            <div><strong>Fast mechanism:</strong><br>Voice notes become business actions.</div>
-            <div><strong>Fast next step:</strong><br>Upgrade only when you want help building more.</div>
-          </div>
-        </div>
-        <div class="model-panel">
-          <h3>Buyer path we are building</h3>
-          <p>This keeps the first purchase easy while giving serious buyers a clear path to more support.</p>
-          <ul class="model-list">
-            <li><b>$27</b><span><strong>Phone CEO Blueprint:</strong> setup guide, daily routine, voice-note workflow, first business assistant.</span></li>
-            <li><b>+$17</b><span><strong>Prompt bump:</strong> 50 ready-to-use voice prompts for planning, content, replies, follow-up, and reminders.</span></li>
-            <li><b>+$27</b><span><strong>Template bump:</strong> daily operator brief, weekly review, content, lead follow-up, and memory templates.</span></li>
-            <li><b>$97</b><span><strong>Pro setup:</strong> advanced workflows for content, sales follow-up, reminders, and client/project management.</span></li>
-            <li><b>$297</b><span><strong>Live build session:</strong> build the AI phone assistant for their actual business with help.</span></li>
-            <li><b>$97/mo</b><span><strong>Phone CEO Club:</strong> Skool community, new workflows, office hours, examples, and implementation support.</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <section><div class="container faq"><div class="section-head"><h2>Questions cold buyers will ask</h2></div><details open><summary>Do I need to be technical?</summary><p>No. The promise is built around normal phone behavior. If you can send voice notes, you can start using the workflow.</p></details><details><summary>Is this just another prompt pack?</summary><p>No. Prompts are included, but the product is the phone-first workflow: voice notes in, business actions out.</p></details><details><summary>What kind of work can it help with?</summary><p>Planning, reminders, content drafts, sales replies, follow-up messages, offer ideas, meeting notes, checklists, and the admin tasks you keep avoiding.</p></details><details><summary>Does it run my whole business automatically?</summary><p>No. You still approve decisions. The goal is to turn your phone into a command center so your AI assistant can organize and draft the work faster.</p></details><details><summary>What happens after the Blueprint?</summary><p>If you want more help, the next step is Phone CEO Club on Skool or a live build session where we help build workflows for your actual business.</p></details></div></section>
 
-
-    <section class="problem" id="pricing">
-      <div class="container offer-wrap">
-        <div>
-          <div class="section-head">
-            <h2>Start with the Blueprint. Upgrade when you want help building more.</h2>
-            <p>Start with the simple setup. When you want ongoing help, join the Skool community where we add new phone-based AI workflows every month.</p>
-          </div>
-          <div class="club">
-            <h3>Phone CEO Club</h3>
-            <div class="price">$97<small>/mo</small></div>
-            <p>Skool community for ongoing workflows, live support, new prompt packs, implementation calls, and monthly AI business systems.</p>
-            <ul class="check-list">
-              <li>Monthly phone-based AI workflows</li>
-              <li>Live implementation support</li>
-              <li>Community examples and wins</li>
-              <li>Templates for content, follow-up, planning, and reminders</li>
-            </ul>
-          </div>
-        </div>
-        <div class="price-card featured">
-          <div class="eyebrow">First version</div>
-          <h3>Phone CEO Blueprint</h3>
-          <div class="price">$27</div>
-          <p>Set up your first AI phone assistant and learn the voice-note workflow for running your business from your phone.</p>
-          <ul class="check-list">
-            <li>Phone CEO setup guide</li>
-            <li>5-minute daily routine</li>
-            <li>Voice-note workflow templates</li>
-            <li>Business memory setup</li>
-            <li>Content, follow-up, reminder, and planning workflows</li>
-            <li>Virtual office demo / wow-factor walkthrough</li>
-          </ul>
-          <a class="btn" href="#">Get instant access</a>
-          <div class="price-note">Includes the core setup, daily routine, and first workflows. Optional upgrades can be offered after checkout.</div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container faq">
-        <div class="section-head">
-          <h2>Questions buyers will ask</h2>
-        </div>
-        <details open>
-          <summary>Do I need to be technical?</summary>
-          <p>No. The promise is built around normal phone behavior. If you can send voice notes, you can use the system.</p>
-        </details>
-        <details>
-          <summary>Is this just another AI prompt course?</summary>
-          <p>No. The positioning is not “learn prompts.” It is “use your phone to delegate business work to AI assistants.” Prompts are included, but the workflow is the product.</p>
-        </details>
-        <details>
-          <summary>What kind of work can it help with?</summary>
-          <p>Planning, reminders, content drafts, sales replies, follow-up messages, offer ideas, meeting notes, checklists, and the admin tasks you keep avoiding.</p>
-        </details>
-        <details>
-          <summary>What happens after the Blueprint?</summary>
-          <p>Buyers can join Phone CEO Club on Skool for $97/month, where we help them add more AI workflows to their business every month.</p>
-        </details>
-      </div>
-    </section>
-
-    <section class="final">
-      <div class="container">
-        <h2>Your business should not stop moving just because you are away from the computer.</h2>
-        <p>Send the voice note. Let your AI assistants start working. Review the output from your phone. Keep your business moving while real life is happening.</p>
-        <div class="hero-actions" style="justify-content:center"><a class="btn" href="#pricing">Get the Phone CEO Blueprint</a><a class="btn secondary" href="#office">See the AI office</a></div>
-      </div>
-    </section>
+    <section class="final"><div class="container"><h2>Your business should not stop moving just because you are away from the computer.</h2><p>Send the voice note. Let your AI assistants start working. Review the output from your phone. Keep your business moving while real life is happening.</p><div class="actions" style="justify-content:center"><a class="btn" href="#checkout">Get Phone CEO Blueprint For $27</a><a class="btn alt" href="#demo">See the AI office</a></div></div></section>
   </main>
-
-  <div class="sticky-mobile">
-    <span><strong>Phone CEO Blueprint</strong><br>$27 first test</span>
-    <a class="btn" href="#pricing">Get it</a>
-  </div>
+  <div class="sticky"><span><strong>Phone CEO Blueprint</strong><br>$27 founding price</span><a class="btn" href="#checkout">Get it</a></div>
 </body>
 </html>
